@@ -4,6 +4,7 @@ value_list = [int(x.strip()) for x in input_list]
 
 print("input_list:", input_list)
 print("value_list:", value_list)
+print("array:", value_list)
 
 # The actual merge sort logic here...
 
