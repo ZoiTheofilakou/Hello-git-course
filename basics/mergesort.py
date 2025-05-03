@@ -1,12 +1,11 @@
 def debug_print(debug_msg=None, **kwargs):
-    if debug_msg:
+    if debug_msg and not kwargs:
         print(debug_msg)
     for key, value in kwargs.items():
-        print("{}: {}".format(key, value))
-
+        print(f"{key}: {value}")
 
 def mergesort(array):
-    debug_print("array:", array=array)
+    debug_print(array=array)
 
     if len(array) <= 1:
         return array
@@ -23,7 +22,6 @@ def mergesort(array):
 
     return merged
 
-
 def merge(left, right):
     merged = []
     while len(left) > 0 and len(right) > 0:
@@ -39,12 +37,11 @@ def merge(left, right):
 
     return merged
 
-
 if __name__ == "__main__":
     input_str = input("Enter numbers, separated by ',': ")
     input_list = input_str.split(",")
-    print("Enter numbers, separated by ',': input_list:", input_list)  # ✅ One-line print
-    
+    debug_print(input_list=input_list)
+
     value_list = []
     for x in input_list:
         try:
